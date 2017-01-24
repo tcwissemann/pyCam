@@ -26,7 +26,7 @@ while -1:
         roi_color = img[y:y+h, x:x+w]
         client = TwilioRestClient("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx") #account_sid, auth_token for twilio accaount.
 
-        client.messages.create(to="+15122997254", from_="+15125807197", #user number, twilio number 
+        client.messages.create(to="+1xxxxxxxxxx", from_="+1xxxxxxxxxx", #user number, twilio number 
                        body="Alert: person(s) on property.") #messege
         
         time.sleep(300)
