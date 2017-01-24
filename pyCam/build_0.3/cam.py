@@ -7,7 +7,7 @@ import time
 
 body_cascade = cv2.CascadeClassifier('haarcascade_fullbody.xml')
 
-#importing cascade-classfiers ^^
+#importing cascade-classfier ^^
 
 vc = cv2.VideoCapture(0)
 
@@ -24,9 +24,9 @@ while -1:
         cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,171),2)
         roi_gray = gray[y:y+h, x:x+w]
         roi_color = img[y:y+h, x:x+w]
-        client = TwilioRestClient("AC47b13b617c5806614265237ce06fa110", "e4e74dbdf6719d769422a90225dd8814") #account_sid, auth_token for twilio accaount.
+        client = TwilioRestClient("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx") #account_sid, auth_token for twilio accaount.
 
-        client.messages.create(to="+15122997254", from_="+15125807197", #my number, twilio number 
+        client.messages.create(to="+15122997254", from_="+15125807197", #user number, twilio number 
                        body="Alert: person(s) on property.") #messege
         
         time.sleep(300)
