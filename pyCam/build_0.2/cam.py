@@ -25,9 +25,9 @@ while -1:
         cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,171),2)
         roi_gray = gray[y:y+h, x:x+w]
         roi_color = img[y:y+h, x:x+w]
-        client = TwilioRestClient("AC47b13b617c5806614265237ce06fa110", "e4e74dbdf6719d769422a90225dd8814") #account_sid, auth_token for twilio accaount.
+        client = TwilioRestClient("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx") #account_sid, auth_token for twilio accaount.
 
-        client.messages.create(to="+15122997254", from_="+15125807197", #my number, twilio number 
+        client.messages.create(to="+1xxxxxxxxxx", from_="+1xxxxxxxxxx", #user number, twilio number 
                        body="Alert: person(s) on property.") #messege
         
         time.sleep(300)
@@ -35,32 +35,33 @@ while -1:
     eyes = eye_cascade.detectMultiScale(roi_gray)
     for (ex,ey,ew,eh) in eyes:
         cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,188,255),2)
-        client = TwilioRestClient("AC47b13b617c5806614265237ce06fa110", "e4e74dbdf6719d769422a90225dd8814") #account_sid, auth_token for twilio accaount.
+        client = TwilioRestClient("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx") #account_sid, auth_token for twilio accaount.
 
-        client.messages.create(to="+15122997254", from_="+15125807197", #my number, twilio number 
-                      body="Alert: person(s) on property.") #messege
+        client.messages.create(to="+1xxxxxxxxxx", from_="+1xxxxxxxxxx", #user number, twilio number 
+                       body="Alert: person(s) on property.") #messege
         
         time.sleep(300)
         
     smiling = smile_cascade.detectMultiScale(roi_gray, 1.7, 5)
     for (sx,sy,sw,sh) in smiling:
         cv2.rectangle(roi_color,(sx,sy),(sx+sw,sy+sh),(240,19,93),2)
-        client = TwilioRestClient("AC47b13b617c5806614265237ce06fa110", "e4e74dbdf6719d769422a90225dd8814") #account_sid, auth_token for twilio accaount.
+        client = TwilioRestClient("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx") #account_sid, auth_token for twilio accaount.
 
-        client.messages.create(to="+15122997254", from_="+15125807197", #my number, twilio number 
-                      body="Alert: person(s) on property.") #messege
+        client.messages.create(to="+1xxxxxxxxxx", from_="+1xxxxxxxxxx", #user number, twilio number 
+                       body="Alert: person(s) on property.") #messege
         
         time.sleep(300)
         
     glasses = glasses_cascade.detectMultiScale(roi_gray, 1.7, 5)
     for (gx,gy,gw,gh) in glasses:
         cv2.rectangle(roi_color,(gx,gy),(gx+gw,gy+gh),(241,18,92),2)
-        client = TwilioRestClient("AC47b13b617c5806614265237ce06fa110", "e4e74dbdf6719d769422a90225dd8814") #account_sid, auth_token for twilio accaount.
+        client = TwilioRestClient("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx") #account_sid, auth_token for twilio accaount.
 
-        client.messages.create(to="+15122997254", from_="+15125807197", #my number, twilio number 
-                      body="Alert: person(s) on property.") #messege
+        client.messages.create(to="+1xxxxxxxxxx", from_="+1xxxxxxxxxx", #user number, twilio number 
+                       body="Alert: person(s) on property.") #messege
     
         time.sleep(300)
+        
 #look for features, draw box on features, sends sms upon sight of features ^^
 
     cv2.imshow('WebDetect',img) 
